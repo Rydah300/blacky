@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Black Oracle Shop | Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+  <div class="main-content">
+    <header>
+      <div class="logo">
+        <i class="fas fa-mask"></i>
+        BLACK ORACLE SHOP
+      </div>
+    </header>
+    
+    <div class="card">
+      <h2 class="card-title">Secure Login</h2>
+      
+      <div class="welcome-message">
+        <p>Welcome to the Black Oracle network.</p>
+        <div class="location-info" id="location-info">
+          Detecting your location...
+        </div>
+        <p>Your identity remains anonymous within our secure marketplace.</p>
+      </div>
+      
+      <form id="login-form" action="#">
+        <div class="form-group">
+          <label for="username">Email or Username</label>
+          <input type="text" id="username" placeholder="Enter your email or username" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        
+        <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+        
+        <button type="submit" class="btn btn-primary">LOGIN</button>
+      </form>
+      
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="forgot-password.html" class="btn-link">Forgot Password?</a>
+        <br><br>
+        <a href="register.html" class="btn-link">Create Account</a>
+      </div>
+      
+      <div class="security-notice">
+        <h4><i class="fas fa-shield-alt"></i> Security Notice</h4>
+        <p>All connections are encrypted with AES-256. Your identity remains anonymous. No logs are stored.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Detect user location and timezone
+    function detectLocation() {
+      const locationInfo = document.getElementById('location-info');
+      
+      // Get timezone
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      
+      // Try to get country from timezone (simplified)
+      let country = "Unknown";
+      if (timezone.includes("America")) country = "Americas";
+      else if (timezone.includes("Europe")) country = "Europe";
+      else if (timezone.includes("Asia")) country = "Asia";
+      else if (timezone.includes("Africa")) country = "Africa";
+      else if (timezone.includes("Australia")) country = "Oceania";
+      
+      // Display location info
+      locationInfo.innerHTML = `Detected Location: ${country}<br>Timezone: ${timezone}`;
+    }
+    
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      detectLocation();
+    });
+  </script>
+</body>
+</html>
