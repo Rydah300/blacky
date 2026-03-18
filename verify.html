@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Black Oracle Shop | Verify</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="main-content">
+    <header>
+      <div class="logo">
+        <i class="fas fa-mask"></i>
+        BLACK ORACLE SHOP
+      </div>
+    </header>
+    
+    <div class="card">
+      <h2 class="card-title">Verify Your Account</h2>
+      
+      <div class="welcome-message">
+        <p>A verification code has been sent to your email.</p>
+        <p>Enter the code below to complete your registration.</p>
+      </div>
+      
+      <form id="verification-form" action="dashboard.html">
+        <div class="form-group">
+          <label for="verification-code">Verification Code</label>
+          <input type="text" id="verification-code" placeholder="Enter 6-digit code" maxlength="6" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">VERIFY ACCOUNT</button>
+      </form>
+      
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="index.html" class="btn-link">← Back to Login</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Handle form submission
+    document.getElementById('verification-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // In a real implementation, you would verify the code
+      // For this demo, we'll just redirect to dashboard
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>
