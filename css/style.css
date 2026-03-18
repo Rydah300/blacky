@@ -1,0 +1,217 @@
+:root {
+  --primary: #6c5ce7;
+  --primary-dark: #5649c3;
+  --secondary: #2d3436;
+  --light: #f7f7f7;
+  --gray: #b2bec3;
+  --success: #00b894;
+  --error: #e17055;
+  --dark: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--dark) 0%, #2c3e50 100%);
+  color: var(--light);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.logo i {
+  background: var(--dark);
+  color: var(--primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary);
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.card {
+  background: rgba(45, 52, 54, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  border-radius: 16px;
+  padding: 35px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+  text-align: center;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--light);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.location-info {
+  background: rgba(108, 92, 231, 0.1);
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 15px 0;
+  font-size: 0.95rem;
+  color: var(--light);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--light);
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(178, 190, 195, 0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--light);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+}
+
+.btn-link {
+  background: transparent;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.btn-link:hover {
+  background: rgba(108, 92, 231, 0.1);
+}
+
+.error-message {
+  color: var(--error);
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.security-notice {
+  background: rgba(0, 184, 148, 0.1);
+  border: 1px solid rgba(0, 184, 148, 0.3);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 25px;
+  font-size: 0.9rem;
+  color: var(--light);
+}
+
+.security-notice h4 {
+  color: var(--success);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Cloudflare Turnstile */
+.cf-turnstile {
+  margin: 20px 0;
+  transform: scale(0.9);
+  transform-origin: top left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    padding: 25px 20px;
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
+}
