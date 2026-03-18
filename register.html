@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Black Oracle Shop | Register</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+  <div class="main-content">
+    <header>
+      <div class="logo">
+        <i class="fas fa-mask"></i>
+        BLACK ORACLE SHOP
+      </div>
+    </header>
+    
+    <div class="card">
+      <h2 class="card-title">Create Account</h2>
+      
+      <form id="register-form" action="verify.html">
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="reg-username">Username</label>
+          <input type="text" id="reg-username" placeholder="Choose a username" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" placeholder="Enter your email address" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" placeholder="Create a strong password" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" placeholder="Enter your country" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="Enter your city" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="telegram">Telegram Username</label>
+          <input type="text" id="telegram" placeholder="@your_telegram_handle" required>
+        </div>
+        
+        <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+        
+        <button type="submit" class="btn btn-primary">CREATE ACCOUNT</button>
+      </form>
+      
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="index.html" class="btn-link">← Back to Login</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Handle form submission
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const password = document.getElementById('reg-password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+      
+      // In a real implementation, you would submit the form
+      // For this demo, we'll just redirect to verification page
+      window.location.href = 'verify.html';
+    });
+  </script>
+</body>
+</html>
